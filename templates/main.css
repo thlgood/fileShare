@@ -1,0 +1,41 @@
+* {
+margin:0;
+padding:0;
+}
+
+body{
+background:whitesmoke;
+color:#555;
+font-family:serif;
+}
+nav {
+height:60px;
+background:black;
+border-bottom:4px solid green;
+}
+nav a{
+color:white;
+text-decoration:none;
+}
+a:hover{
+border-bottom:1px dashed white;
+}
+nav ul{
+display:inline;
+padding:20px;
+}
+nav ul li{
+list-style-type:none;
+}
+.site-logo {
+float:left;
+font-size:30px;
+}
+.top-navbar{
+float:right;
+}
+.top-navbar li {
+display:inline;
+font-size:16px;
+padding-right:20px;
+}

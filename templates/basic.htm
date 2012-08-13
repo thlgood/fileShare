@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="YUCOAT file share center!">
+<title>Welcome to YUCOAT File Center!</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<!--<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<style type="text/css">
+* {
+margin:0;
+padding:0;
+}
+
+body{
+/*background:whitesmoke;*/
+color:#555;
+font-family:monospace;
+}
+nav {
+height:60px;
+background:black;
+border-bottom:4px solid green;
+}
+nav a{
+color:white;
+text-decoration:none;
+}
+a {
+color:seagreen;
+text-decoration:none;
+}
+a:hover{
+border-bottom:1px dashed white;
+}
+nav ul{
+display:inline;
+padding:20px;
+}
+nav ul li{
+list-style-type:none;
+}
+.site-logo {
+float:left;
+font-size:30px;
+}
+.top-navbar{
+float:right;
+}
+.top-navbar li {
+display:inline;
+font-size:16px;
+padding-right:20px;
+}
+</style>
+</head>
+<body>
+<nav>
+<ul class = "site-logo">
+<li><a href="/">YUCOAT</a></li>
+</ul>
+<ul class = "top-navbar">
+<li><a href="#" alt="">Home</a></li>
+<li><a href="#" alt="">About</a></li>
+</ul>
+</nav>
+<div id="main-content" class="container" style="width:600px;">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>文件名</td>
+      <td>文件大小</td>
+      <td>修改日期</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% if site_path != '/' %}
+    <tr>
+      <td><a href=".." alt='返回上一层目录'>..</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    {% endif %}
+    {% for x in files %}
+        <tr>
+          <td><a href="./{{ x }}">{{ x.name }}</a></td>
+          <td><a href="./{{ x }}">{{ x.size|filesizeformat(x.size) }}</a></td>
+          <td><a href="./{{ x }}">{{ x.date }}</a></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</body>
+</html>
