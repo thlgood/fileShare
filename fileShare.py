@@ -21,6 +21,8 @@ class fileModel():
 
 def list_abs_dir(abspath):
     retval_files_dirs = []
+    files_and_dirs = []
+    files_and_dirs_strings = []
     try:
         files_and_dirs = os.listdir(abspath)
     except:
@@ -29,9 +31,9 @@ def list_abs_dir(abspath):
         if x[0] == '.':
             continue
         elif os.path.isdir(os.path.join(abspath, x)):
-            retval_files_dirs.append(x.decode('UTF-8') + u'/')
+            retval_files_dirs.append(x + u'/')
         else:
-            retval_files_dirs.append(x.decode('UTF-8'))
+            retval_files_dirs.append(x)
     return retval_files_dirs
 
 def list_file_stat(dir_abspath, files_and_dirs):
@@ -42,7 +44,7 @@ def list_file_stat(dir_abspath, files_and_dirs):
         try:
             info = os.stat(os.path.join(dir_abspath, x))
         except:
-            files_and_dirs_set.append(x.decode('UTF-8'), u'N/A(无权限)', u'N/A(无权限)')
+            files_and_dirs_set.append(x, u'N/A(无权限)', u'N/A(无权限)')
         else:
             value = fileModel(x, 
                               info.st_size,

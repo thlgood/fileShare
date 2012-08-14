@@ -2,5 +2,5 @@
 #!/usr/bin/env/ python
 
 import os
-#ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-ROOT_DIR = '/home/tang'
+#前面的u不能去掉，不然会提示编码错误
+ROOT_DIR = u'/home/tang'
