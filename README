@@ -7,14 +7,7 @@
 
 然后执行./fileShare.py即可开始分享
 
-目前已知BUG：
-打开某些页面的时候会提示编码错误。
-出现这一错误是因为某些目录包含的文件的文件名为非ASCII字符
 
-但不是每个含非ASCII字符的页面都会提示编码错误
-
-
-如果你知道如何解决这个BUG，请联系作者。
 作者：YUCOAT
 邮箱：thlgood@yucoat.com
 主页：http://www.yucoat.com
